@@ -29,7 +29,8 @@ requirejs(['./WorldWindShim',
         // Create the WorldWindow.
         var wwd = new WorldWind.WorldWindow("canvasOne");
 
-        // Create and add layers to the WorldWindow.
+        /
+        / Create and add layers to the WorldWindow.
         var layers = [
             // Imagery layers.
             {layer: new WorldWind.BMNGLayer(), enabled: true},
