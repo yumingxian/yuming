@@ -10,7 +10,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script data-main="CustomPlacemark" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
 </head>
+
 <body>
+
+
 
 <div class="container">
     <div class="jumbotron hidden-xs">
@@ -46,12 +49,15 @@
         </div>
     </div>
 </div>
-            <img id="ice-bear" src="https://i.pinimg.com/474x/6b/4d/83/6b4d837aecf1b1c9676921017fb0c72b--cartoon-bear-we-bare-bears.jpg">
+        <button type="button" id="placemark">click here </button>
 
     <script>
         $("img").attr("src", "https://i.pinimg.com/474x/6b/4d/83/6b4d837aecf1b1c9676921017fb0c72b--cartoon-bear-we-bare-bears.jpg");
-
-
+        var clickerButton = document.getElementById("placemark");
+        var onButtonClick;
+        onButtonClick = function () {
+            clickerButton.textContent = "Oh wow, you clicked me!";
+        };
     </script>
 
 </body>
