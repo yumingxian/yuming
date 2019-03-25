@@ -82,7 +82,7 @@ requirejs(['./WorldWindShim',
             longitude = -121.129722;
 
         // Set up the common placemark attributes.
-        placemarkAttributes.imageScale = 2;
+        placemarkAttributes.imageScale = 1;
         placemarkAttributes.imageOffset = new WorldWind.Offset(
             WorldWind.OFFSET_FRACTION, 0.3,
             WorldWind.OFFSET_FRACTION, 0.0);
