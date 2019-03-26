@@ -63,7 +63,7 @@ requirejs(['./WorldWindShim',
         highlightAttributes.imageScale = 1.2;
 
         // Create the placemark with the attributes defined above.
-        var placemarkPosition = new WorldWind.Position(47.684444, -80, 1e2);
+        var placemarkPosition = new WorldWind.Position(40.3968, -74.0916, 1e2);
         var placemark = new WorldWind.Placemark(placemarkPosition, false, placemarkAttributes);
         // Draw placemark at altitude defined above, relative to the terrain.
         placemark.altitudeMode = WorldWind.RELATIVE_TO_GROUND;
@@ -84,4 +84,5 @@ requirejs(['./WorldWindShim',
 
         // Create a layer manager for controlling layer visibility.
         var layerManager = new LayerManager(wwd);
+        console.log(wwd);
     });
