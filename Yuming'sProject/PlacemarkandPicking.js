@@ -44,6 +44,7 @@ requirejs(['./WorldWindShim',
         ];
 
         for (var l = 0; l < layers.length; l++) {
+            console.log(layers[l].enabled);
             layers[l].layer.enabled = layers[l].enabled;
             wwd.addLayer(layers[l].layer);
         }
@@ -165,13 +166,14 @@ requirejs(['./WorldWindShim',
                         console.log("Label picked");
                     }
                 }
-            }
 
             // Update the window if we changed anything.
             if (redrawRequired) {
                 wwd.redraw(); // redraw to make the highlighting changes take effect on the screen
             }
-        };
+        }
+            if(picklist.objects[i].userObject instanceof WorldWind.Placemark)
+
 
         // Listen for mouse moves and highlight the placemarks that the cursor rolls over.
         wwd.addEventListener("mousemove", handlePick);

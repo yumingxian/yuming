@@ -25,6 +25,7 @@ requirejs(['./WorldWindShim',
         ];
 
         for (var l = 0; l < layers.length; l++) {
+            console.log(layers[l].enabled);
             layers[l].layer.enabled = layers[l].enabled;
             wwd.addLayer(layers[l].layer);
         }
