@@ -24,6 +24,8 @@ requirejs(['./WorldWindShim',
             {layer: new WorldWind.ViewControlsLayer(wwd), enabled: true}
         ];
 
+
+
         for (var l = 0; l < layers.length; l++) {
             console.log(layers[l].enabled);
             layers[l].layer.enabled = layers[l].enabled;
@@ -76,6 +78,7 @@ requirejs(['./WorldWindShim',
 
         // Add the placemark to the layer.
         placemarkLayer.addRenderable(placemark);
+
 
         // Add the placemarks layer to the WorldWindow's layer list.
         wwd.addLayer(placemarkLayer);

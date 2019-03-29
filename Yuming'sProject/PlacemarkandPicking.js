@@ -44,7 +44,6 @@ requirejs(['./WorldWindShim',
         ];
 
         for (var l = 0; l < layers.length; l++) {
-            console.log(layers[l].enabled);
             layers[l].layer.enabled = layers[l].enabled;
             wwd.addLayer(layers[l].layer);
         }
@@ -83,7 +82,7 @@ requirejs(['./WorldWindShim',
             longitude = -121.129722;
 
         // Set up the common placemark attributes.
-        placemarkAttributes.imageScale = 1;
+        placemarkAttributes.imageScale = 2;
         placemarkAttributes.imageOffset = new WorldWind.Offset(
             WorldWind.OFFSET_FRACTION, 0.3,
             WorldWind.OFFSET_FRACTION, 0.0);
@@ -166,18 +165,17 @@ requirejs(['./WorldWindShim',
                         console.log("Label picked");
                     }
                 }
+            }
 
             // Update the window if we changed anything.
             if (redrawRequired) {
                 wwd.redraw(); // redraw to make the highlighting changes take effect on the screen
             }
-        }
-            if(picklist.objects[i].userObject instanceof WorldWind.Placemark)
-
+        };
 
         // Listen for mouse moves and highlight the placemarks that the cursor rolls over.
         wwd.addEventListener("mousemove", handlePick);
-
+        if(picklist.objects[i].userObject instanceof WorldWind.Placemark)
         // Listen for taps on mobile devices and highlight the placemarks that the user taps.
         var tapRecognizer = new WorldWind.TapRecognizer(wwd, handlePick);
 
