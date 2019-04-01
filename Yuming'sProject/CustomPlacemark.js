@@ -76,6 +76,7 @@ requirejs(['./WorldWindShim',
         // Create the renderable layer for placemarks.
         var placemarkLayer = new WorldWind.RenderableLayer("Custom Placemark");
 
+
         // Add the placemark to the layer.
         placemarkLayer.addRenderable(placemark);
 
