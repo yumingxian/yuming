@@ -154,13 +154,9 @@ requirejs(['./WorldWindShim',
                 for (var p = 0; p < pickList.objects.length; p++) {
                     pickList.objects[p].userObject.highlighted = true;
 
-                    // Keep track of highlighted items in order to de-highlight them later.
                     highlightedItems.push(pickList.objects[p].userObject);
 
-                    // Detect whether the placemark's label was picked. If so, the "labelPicked" property is true.
-                    // If instead the user picked the placemark's image, the "labelPicked" property is false.
-                    // Applications might use this information to determine whether the user wants to edit the label
-                    // or is merely picking the placemark as a whole.
+
                     if (pickList.objects[p].labelPicked) {
                         console.log("Label picked");
                     }
