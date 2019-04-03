@@ -172,7 +172,7 @@ requirejs(['./WorldWindShim',
         // Listen for mouse moves and highlight the placemarks that the cursor rolls over.
         wwd.addEventListener("mousemove", handlePick);
 
-        if(picklist.objects[i].userObject instanceof WorldWind.Placemark){
+        if(pickList.objects[i].userObject instanceof WorldWind.Placemark){
 
         }
 
