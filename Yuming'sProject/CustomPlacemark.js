@@ -84,13 +84,36 @@ requirejs(['./WorldWindShim',
         // Add the placemarks layer to the WorldWindow's layer list.
         wwd.addLayer(placemarkLayer);
 
+
         // Now set up to handle highlighting.
         var highlightController = new WorldWind.HighlightController(wwd);
 
         // Create a layer manager for controlling layer visibility.
         var layerManager = new LayerManager(wwd);
-        console.log(wwd);
-        if(pickList.objects[i].userObject instanceof WorldWind.Placemark){
+
+
+
+        var handlePick = function (o) {
+
+            var x = o.clientX,
+                y = o.clientY;
+
+
+
+            var pickList = wwd.pick(wwd.canvasCoordinates(x, y));
+            for(var i = 0; i < pickList.objects.length; i++){
+            if(pickList.objects[i].userObject instanceof WorldWind.Placemark){
+                $('.hover_bkgr_fricc').show();
+            }
+
 
         }
+        };
+        $('.hover_bkgr_fricc').click(function(){
+            $('.hover_bkgr_fricc').hide();
+        });
+
+        wwd.addLayer(placemarkLayer);
+        console.log(wwd);
+        wwd.addEventListener("click", handlePick);
     });
